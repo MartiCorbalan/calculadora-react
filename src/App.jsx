@@ -61,7 +61,11 @@ function App() {
           <Button value={1} funcioClicar={posarInput} />
           <Button value={2} funcioClicar={posarInput} />
           <Button value={3} funcioClicar={posarInput} />
-          <Button className="operacions " value={"+"} funcioClicar={sumar} />
+          <Button
+            className="operacions "
+            value={"0"}
+            funcioClicar={posarInput}
+          />
           <br />
           <br />
           <div className="operator">
