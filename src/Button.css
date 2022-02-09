@@ -1,0 +1,24 @@
+.btn_numeros {
+  height: 550px;
+  width: 450px;
+
+  margin: auto;
+}
+
+.botones {
+  height: 100px;
+  width: 150px;
+}
+.btn_acceptar {
+  height: 100px;
+  width: 200px;
+}
+.operator {
+  width: 400px;
+  height: 100px;
+  margin: auto;
+}
+.operacions {
+  width: 200px;
+  height: 100px;
+}
