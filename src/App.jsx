@@ -11,11 +11,31 @@ import { useState } from "react";
 function App() {
   let nextnum = false;
   let operate = null;
+  let segNum = false;
 
   const [resultat, setResultat] = useState(0);
+  const [resultat2, setResultat2] = useState(0);
+  const [resultat3, setResultat3] = useState(0);
 
   const posarInput = (input) => {
-    !nextnum ? setResultat(input) : operar(input);
+    if (!nextnum) {
+      setResultat(input);
+    } else {
+      operar(input);
+    }
+  };
+
+  const seguentNum = (input) => {
+    /* if (!segNum) {
+      setResultat(resultat * 10 + input);
+    } else {
+      operar(input);
+    } */
+    if (nextnum) {
+      setResultat(resultat * 10 + input);
+    } /*  else {
+      setResultat(resultat * 10 + input);
+    } */
   };
 
   const sumar = () => {
@@ -28,8 +48,11 @@ function App() {
     operate = "-";
   };
 
+  const igual = () => {};
+
   const operar = (input) => {
     nextnum = false;
+
     if (operate === "+") {
       return posarInput(resultat + input);
     } else {
@@ -48,7 +71,8 @@ function App() {
 
       <div className="calculadora">
         <br />
-        <Input text={resultat} />
+        <Input text={resultat} text1={resultat2} />
+
         <br />
         <div className="btn_numeros">
           <br />
@@ -71,6 +95,7 @@ function App() {
           <div className="operator">
             <Button className="operacions " value={"+"} funcioClicar={sumar} />
             <Button className="operacions" value={"-"} funcioClicar={restar} />
+            <Button className="operacions" value={"="} funcioClicar={sumar} />
           </div>
           <br />
           <Clearbutton funcioClicar={clear} />
