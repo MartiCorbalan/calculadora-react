@@ -5,9 +5,9 @@ import "./Input.css";
 import Button from "./components/Button";
 import Clearbutton from "./components/Clearbutton";
 import Input from "./components/Input";
- 
+
 import { useState } from "react";
- 
+
 function App() {
   const [operacion, setOperacion] = useState(null); // Operación = + - * /
   const [valor, setValor] = useState(0); // Primer Valor
@@ -15,7 +15,7 @@ function App() {
   const [inputs, setInputs] = useState(""); // Todos los valores ingresados
   const [segundaParte, setSegundaParte] = useState(false); // Si esta en la segunda parte
   const [resultado, setResultado] = useState(0); // Resultado de los dos valores ingresados
- 
+
   const posarInput = (input) => {
     // Comprueba si esta en la primera parte o segunda
     /* 
@@ -32,21 +32,21 @@ function App() {
       setInputs(inputs + input);
     }
   };
- 
+
   const sumar = () => {
     // Define que esta en la segunda parte y la operación es +
     setSegundaParte(true);
     setInputs(valor + "+");
     setOperacion("+");
   };
- 
+
   const restar = () => {
     // Define que esta en la segunda parte y la operación es -
     setSegundaParte(true);
     setInputs(valor + "-");
     setOperacion("-");
   };
- 
+
   const igual = () => {
     /*
       1. Si la operación es +
@@ -63,7 +63,7 @@ function App() {
     setInputs("");
     setSegundaParte(false);
   };
- 
+
   const clear = () => {
     // Limpia todos los valores
     setSegundaParte(false);
@@ -72,15 +72,15 @@ function App() {
     setInputs("");
     setResultado(0);
   };
- 
+
   return (
     <div className="App">
       <br />
- 
+
       <div className="calculadora">
         <br />
         <Input text={inputs} text1={resultado} />
- 
+
         <br />
         <div className="btn_numeros">
           <br />
@@ -112,5 +112,5 @@ function App() {
     </div>
   );
 }
- 
+
 export default App;
